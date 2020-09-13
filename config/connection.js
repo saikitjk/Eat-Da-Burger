@@ -2,6 +2,7 @@ const util = require("util");
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
+  port: 3306,
   host: "localhost",
   user: "root",
   password: "P@ssword!",
@@ -15,6 +16,6 @@ connection.connect((err) => {
   }
   console.log("connected as id " + connection.threadId);
 });
-connection.query = util.promisify(connection.query);
+//connection.query = util.promisify(connection.query);
 
 module.exports = connection;
