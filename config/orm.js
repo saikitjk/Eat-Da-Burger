@@ -31,11 +31,11 @@ const orm = {
   },
   // `updateOne()`
 
-  updateOne: function (targetedTable, isDevoured, burgerName, cb) {
+  updateOne: function (targetedTable, isDevoured, burgerID, cb) {
     var queryString = "UPDATE ?? SET ?? WHERE ??";
     connection.query(
       queryString,
-      [targetedTable, isDevoured, burgerName],
+      [targetedTable, isDevoured, burgerID],
       function (err, result) {
         if (err) {
           console.error("SQL query error: " + err.stack);
