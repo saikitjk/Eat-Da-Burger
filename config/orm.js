@@ -9,23 +9,18 @@ const orm = {
         console.error("SQL query error: " + err.stack);
       }
       console.log("All burgers in the DB: ");
-      console.log(result);
       cb(result);
     });
   },
   // `insertOne()`
-  insertOne: function (burgerName, isDevoured, cb) {
+  insertOne: function (burgerName, cb) {
     var queryString =
-      "INSERT INTO burgers (burger_name, devoured) VALUE ('??','??')";
-    connection.query(queryString, [burgerName, isDevoured], function (
-      err,
-      result
-    ) {
+      "INSERT INTO burgers (burger_name, devoured) VALUE ('??',false)";
+    connection.query(queryString, [burgerName], function (err, result) {
       if (err) {
         console.error("SQL query error: " + err.stack);
       }
       console.log("Inserting the following burger into the DB: ");
-      console.log(result);
       cb(result);
     });
   },
@@ -41,7 +36,6 @@ const orm = {
         console.error("SQL query error: " + err.stack);
       }
       console.log("Updating the following burger into the DB: ");
-      console.log(result);
       cb(result);
     });
   },

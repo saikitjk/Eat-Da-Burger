@@ -5,7 +5,7 @@ var burger = require("../models/burger");
 
 ////
 router.get("/", function (req, res) {
-  burger.all(function (data) {
+  burger.select(function (data) {
     var burgerObj = {
       burger: data,
     };
@@ -15,13 +15,9 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-  burger.create(
-    ["burgerName", "isDevoured"],
-    [req.body.burgerName, req.body.isDevoured],
-    function (result) {
-      res.json({ id: result.insertId });
-    }
-  );
+  burger.create("burgerName", [req.body.burgerName], function (result) {
+    res.json({ id: result.insertId });
+  });
 });
 
 router.put("/api/burgers/:id", function (req, res) {
