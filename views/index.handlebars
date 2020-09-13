@@ -1,9 +1,27 @@
-<h1>Welcome</h1>
+<div class="container">
 
-<div>
-    {{#each burger}}
-    <div>
-        <h5>{{burger_name}}</h5>
+    <h1>Welcome</h1>
+    <div class="row">
+
     </div>
-    {{/each}}
-</div>
+    <div class="row">
+        <div class="col">
+            <div>
+                <h2>To be devoured</h2>
+                {{#each burger}}
+                <div>
+                    <h5>{{burger_name}}</h5>
+                </div>
+                {{/each}}
+            </div>
+            <div class="col">
+                <h2>Devoured</h2>
+                <div>
+                    {{#each burger}}
+                    <div>
+                        <h5>{{burger_name}}</h5>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>

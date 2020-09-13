@@ -10,13 +10,8 @@ app.set("view engine", "handlebars");
 
 app.set("port", process.env.PORT || 3000);
 
-// app.get("/", function (req, res) {
-//   res.render("index",{
-
-//   });
-// });
 //routes
-app.use(routes);
+app.use(routes); //goes to burgers_controller.js
 
 app.listen(app.get("port"), function () {
   console.log("Server is now running on: http://localhost:" + app.get("port"));
