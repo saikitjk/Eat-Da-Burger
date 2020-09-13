@@ -9,18 +9,22 @@
             <div>
                 <h2>To be devoured</h2>
                 {{#each burger}}
+                {{#unless devoured}}
                 <div>
                     <h5>{{burger_name}}</h5>
                 </div>
+                {{/unless}}
                 {{/each}}
             </div>
             <div class="col">
                 <h2>Devoured</h2>
                 <div>
                     {{#each burger}}
+                    {{#if devoured}}
                     <div>
                         <h5>{{burger_name}}</h5>
                     </div>
+                    {{/if}}
                     {{/each}}
                 </div>
             </div>
