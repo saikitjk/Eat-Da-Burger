@@ -15,7 +15,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-  burger.create("burgerName", [req.body.burgerName], function (result) {
+  burger.create(req.body.burgerName, function (result) {
     res.json({ id: result.insertId });
   });
 });
@@ -26,10 +26,9 @@ router.put("/api/burgers/:id", function (req, res) {
   console.log("Condition", condition);
 
   burger.update(
-    {
-      isDevoured: req.body.isDevoured,
-    },
+    req.body.devoured,
     condition,
+
     function (data) {
       if (data.dataRow === 0) {
         return res.status(404).end();

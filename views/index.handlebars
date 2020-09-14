@@ -30,7 +30,7 @@
                 {{#each burger}}
                 {{#unless devoured}}
                 <div class="burgerBlock">
-                    <button type=" button" class="btn btn-outline-success burgerButton">
+                    <button type=" button" class="btn btn-outline-success" id="burgerGreenButton" data-id="{{this.id}}">
                         {{burger_name}}
                     </button>
                 </div>
@@ -48,7 +48,7 @@
                 {{#each burger}}
                 {{#if devoured}}
                 <div class="burgerBlock">
-                    <button type="button" class="btn btn-outline-danger burgerButton">
+                    <button type="button" class="btn btn-outline-danger" id="burgerRedButton">
                         {{burger_name}}
                     </button>
                 </div>

@@ -15,8 +15,10 @@ const orm = {
   // `insertOne()`
   insertOne: function (burgerName, cb) {
     var queryString =
-      "INSERT INTO burgers (burger_name, devoured) VALUE ('??',false)";
-    connection.query(queryString, [burgerName], function (err, result) {
+      "INSERT INTO burgers (burger_name, devoured) VALUE ('" +
+      burgerName +
+      "',false)";
+    connection.query(queryString, function (err, result) {
       if (err) {
         console.error("SQL query error: " + err.stack);
       }
@@ -26,12 +28,10 @@ const orm = {
   },
   // `updateOne()`
 
-  updateOne: function (isDevoured, burgerID, cb) {
-    var queryString = "UPDATE burgers SET ?? WHERE ??";
-    connection.query(queryString, [isDevoured, burgerID], function (
-      err,
-      result
-    ) {
+  updateOne: function (devouredStatus, burgerID, cb) {
+    var queryString =
+      "UPDATE burgers SET devoured = " + devouredStatus + " WHERE " + burgerID;
+    connection.query(queryString, function (err, result) {
       if (err) {
         console.error("SQL query error: " + err.stack);
       }
