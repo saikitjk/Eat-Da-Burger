@@ -1,5 +1,75 @@
+.burgerButton {
+  margin-right: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  background-color: bisque;
+}
+
+.burger-icon {
+  width: 400px;
+  height: 500px;
+}
+
+.burger-group {
+  height: 100%;
+  margin-top: 20px;
+}
+
+.col-6 h3 {
+  text-align: center;
+}
+
 .burgerBlock {
-  margin: 10px auto;
-  padding: 5px 10px 0px 10px;
-  border-radius: 200px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.burger-row {
+  margin-top: 10%;
+}
+
+/*footer*/
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+  left: 0;
+  position: fixed;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#footer-images ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.pull-left img {
+  padding-top: 5px;
+  padding-right: 15px;
+  max-width: 35px;
+  height: auto;
+}
+
+.pull-center img {
+  padding-top: 5px;
+  padding-right: 20px;
+  max-width: 35px;
+  height: auto;
+}
+
+.pull-right img {
+  padding-top: 5px;
+  padding-right: 15px;
+  max-width: 35px;
+  height: auto;
 }

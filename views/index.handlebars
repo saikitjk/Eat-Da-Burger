@@ -1,41 +1,84 @@
 <div class="container pt-3 text-center">
 
-    <h1>Welcome</h1>
-    <div class="row">
+    <h1>Welcome to Eat-Da-Burger!</h1>
 
+    <img class="burger-icon" src="./images/burger.png">
+
+
+    <div></div>
+    <div class="row top-row">
+        <!--FIRST ROW-->
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary devour" type="button">Add!</button>
+            </div>
+        </div>
     </div>
-    <div class="row">
+    <h5>Enter a burger you want to eat and click the "Add!" button</h5>
+    <h5>Click the burger you like to devour it!</h5>
+    <hr>
+
+
+    <div class="row burger-row">
+
+        <!--SECOND ROW-->
         <div class="col-6">
             <h3>To be devoured</h3>
-
-            {{#each burger}}
-            {{#unless devoured}}
-            <div class="burgerBlock">
-                <button type=" button" class="btn btn-outline-success">
-                    {{this.id}} {{burger_name}}
-                </button>
-            </div>
-            <p>
+            <div class="burger-group">
+                {{#each burger}}
+                {{#unless devoured}}
+                <div class="burgerBlock">
+                    <button type=" button" class="btn btn-outline-success burgerButton">
+                        {{burger_name}}
+                    </button>
+                </div>
+                <br>
                 {{/unless}}
                 {{/each}}
 
+
+            </div>
         </div>
+
         <div class="col-6">
             <h3>Devoured</h3>
-
-            {{#each burger}}
-            {{#if devoured}}
-            <div class="burgerBlock">
-                <button type="button" class="btn btn-outline-danger">
-                    {{this.id}} {{burger_name}}
-                </button>
-            </div>
-            <p>
+            <div class="burger-group">
+                {{#each burger}}
+                {{#if devoured}}
+                <div class="burgerBlock">
+                    <button type="button" class="btn btn-outline-danger burgerButton">
+                        {{burger_name}}
+                    </button>
+                </div>
+                <br>
                 {{/if}}
                 {{/each}}
-
+            </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row footer-row">
+        <!--THIRD ROW-->
+        <footer class="footer">
+            <section id="footer-images">
+                <ul>
+                    <li class="pull-left">
+                        <a href="https://github.com/saikitjk"><img src="./images/github.png" alt="git"></a>
+                    </li>
+
+                    <li class="pull-center">
+                        <a href="https://www.linkedin.com/in/saikitjk/"><img src="./images/in.png" alt="Linkedin"></a>
+                    </li>
+
+                    <li class="pull-right">
+                        <a href="mailto:saikitjk@gmail.com"><img src="./images/email.png" alt="email"></a>
+                    </li>
+                </ul>
+            </section>
+
+        </footer>
+
     </div>
+</div>
