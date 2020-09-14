@@ -13,6 +13,9 @@ app.set("port", process.env.PORT || 3000);
 //routes
 app.use(routes); //goes to burgers_controller.js
 
+//middleware to read static file
+app.use(express.static("./public"));
+
 app.listen(app.get("port"), function () {
   console.log("Server is now running on: http://localhost:" + app.get("port"));
 });
