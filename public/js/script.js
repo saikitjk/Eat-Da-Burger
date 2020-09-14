@@ -11,9 +11,9 @@ $(document).ready(function () {
     } else {
       $.ajax("/api/burgers", {
         type: "POST",
-        data: { burger_name: burger_name },
+        data: { burgerName: burger_name },
       }).then(function () {
-        console.log(`Added a new Burger!`);
+        console.log(`Added ${burger_name} as a new Burger!`);
         location.reload();
       });
     }

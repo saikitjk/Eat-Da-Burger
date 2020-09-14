@@ -22,7 +22,8 @@ const orm = {
       if (err) {
         console.error("SQL query error: " + err.stack);
       }
-      console.log("Inserting the following burger into the DB: ");
+      console.log("Inserting the following burger into the DB: " + burgerName);
+
       cb(result);
     });
   },
