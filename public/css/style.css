@@ -7,6 +7,19 @@
   background-color: bisque;
 }
 
+h5 {
+  color: rgba(61, 61, 61, 0.712);
+}
+
+.reorderButton {
+  border-style: none;
+  background-color: transparent;
+}
+
+.addButton {
+  color: black;
+}
+
 .burger-icon {
   width: 400px;
   height: 500px;

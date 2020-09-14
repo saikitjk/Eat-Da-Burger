@@ -10,14 +10,16 @@
         <!--FIRST ROW-->
 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" aria-describedby="button-addon2" id="burger-name">
+            <input type="text" class="form-control" placeholder="What would you like to have..?"
+                aria-describedby="button-addon2" id="burger-name">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary devour" type="button" id="add">Add!</button>
+                <button class="btn btn-outline-secondary devour addButton" type="button" id="add">Add!</button>
             </div>
         </div>
     </div>
     <h5>Enter a burger you want to eat and click the "Add!" button</h5>
     <h5>Click the burger you like to devour it!</h5>
+    <h5>Click the reorder button to reorder it!</h5>
     <hr>
 
 
@@ -26,36 +28,38 @@
         <!--SECOND ROW-->
         <div class="col-6">
             <h3>To be devoured</h3>
-            <div class="burger-group">
-                {{#each burger}}
-                {{#unless devoured}}
-                <div class="burgerBlock">
-                    <button type=" button" class="btn btn-outline-success" id="burgerGreenButton" data-id="{{this.id}}">
-                        {{{burger_name}}}
-                    </button>
-                </div>
-                <br>
-                {{/unless}}
-                {{/each}}
 
-
+            {{#each burger}}
+            {{#unless devoured}}
+            <div class="burgerBlock">
+                <button type=" button" class="btn btn-outline-success burgerGreenButton" id="burgerGreenButton"
+                    data-id="{{this.id}}">
+                    {{{burger_name}}}
+                </button>
             </div>
+            <br>
+            {{/unless}}
+            {{/each}}
+
+
+
         </div>
 
         <div class="col-6">
             <h3>Devoured</h3>
-            <div class="burger-group">
-                {{#each burger}}
-                {{#if devoured}}
-                <div class="burgerBlock">
-                    <button type="button" class="btn btn-outline-danger" id="burgerRedButton">
-                        {{{burger_name}}}
-                    </button>
-                </div>
-                <br>
-                {{/if}}
-                {{/each}}
+
+            {{#each burger}}
+            {{#if devoured}}
+            <div class="burgerBlock">
+                <button type="button" class="btn btn-outline-danger burgerRedButton" id="burgerRedButton">
+                    {{{burger_name}}}
+                </button>
+                <button type="button" class="reorderButton" id="reorderButton" data-id="{{this.id}}">&#128260;</button>
             </div>
+            <br>
+            {{/if}}
+            {{/each}}
+
         </div>
     </div>
 

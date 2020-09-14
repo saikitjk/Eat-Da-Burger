@@ -18,8 +18,8 @@ $(document).ready(function () {
       });
     }
   });
-
-  $("#burgerGreenButton").on("click", function () {
+  //******devour
+  $(".burgerGreenButton").on("click", function () {
     var burgerID = $(this).data("id");
 
     console.log("A burger has been selected");
@@ -28,6 +28,20 @@ $(document).ready(function () {
       data: { devoured: true },
     }).then(function () {
       console.log("A burger has been devoured");
+      location.reload();
+    });
+  });
+
+  //reorder
+  $(".reorderButton").on("click", function () {
+    var burgerID = $(this).data("id");
+
+    console.log("A burger has been selected");
+    $.ajax("/api/burgers/" + burgerID, {
+      type: "PUT",
+      data: { devoured: false },
+    }).then(function () {
+      console.log("A burger has been reordered");
       location.reload();
     });
   });

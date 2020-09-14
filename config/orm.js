@@ -14,10 +14,8 @@ const orm = {
   },
   // `insertOne()`
   insertOne: function (burgerName, cb) {
-    var queryString =
-      "INSERT INTO burgers (burger_name, devoured) VALUE ('" +
-      burgerName +
-      "',false)";
+    var queryString = `INSERT INTO burgers (burger_name, devoured) VALUE (
+      ${burgerName},false)`;
     connection.query(queryString, function (err, result) {
       if (err) {
         console.error("SQL query error: " + err.stack);
