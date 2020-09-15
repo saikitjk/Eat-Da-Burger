@@ -2,7 +2,9 @@
 
 ## Description
 
-A burger logger with MySQL, Node, Express, Handlebars and ORM
+A full-stack restaurant application with HTML, CSS, JavaScript, jQuery, Ajax, APIs, Node.js, MySQL, Node, Express, Handlebars and ORM.
+
+Application has been deployed through Heroku.
 
 ## Deployed application
 
