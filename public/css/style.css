@@ -6,8 +6,10 @@
   border-radius: 15px;
   background-color: bisque;
 }
-
-h5 {
+.container {
+  margin-bottom: 10%;
+}
+h6 {
   color: rgba(61, 61, 61, 0.712);
 }
 
@@ -18,11 +20,12 @@ h5 {
 
 .addButton {
   color: black;
+  z-index: 0 !important;
 }
 
 .burger-icon {
-  width: 400px;
-  height: 500px;
+  width: 240px;
+  height: 300px;
 }
 
 .burger-group {
