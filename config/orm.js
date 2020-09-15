@@ -1,5 +1,25 @@
 var connection = require("../config/connection.js");
 
+/////
+function checkApostrophe(obj) {
+  var arr = [];
+
+  for (var key in obj) {
+    var value = obj[key];
+    if (value.indexOf("'" >= 0)) {
+      //console.log(value);
+      if (value === "'") {
+        value = "'" + value;
+      }
+      arr.push(value);
+    }
+  }
+
+  return arr.join("");
+}
+
+////
+
 const orm = {
   // `selectAll()`
   selectAll: function (cb) {
@@ -14,8 +34,10 @@ const orm = {
   },
   // `insertOne()`
   insertOne: function (burgerName, cb) {
-    var queryString = `INSERT INTO burgers (burger_name, devoured) VALUE (
-      ${burgerName},false)`;
+    var queryString =
+      "INSERT INTO burgers (burger_name, devoured) VALUE ('" +
+      checkApostrophe(burgerName) +
+      "',false)";
     connection.query(queryString, function (err, result) {
       if (err) {
         console.error("SQL query error: " + err.stack);
