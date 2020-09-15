@@ -8,7 +8,7 @@ Application has been deployed through Heroku.
 
 ## Deployed application
 
-     https://eat-da-burger-jk5.herokuapp.com/
+     [Eat-Da-Burger Application](https://eat-da-burger-jk5.herokuapp.com/)
 
 ## Screenshot
 
